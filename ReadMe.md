@@ -49,7 +49,7 @@ The application runs on java 10.
 
 * How/where to download your program
 ```
-git clone 
+git clone https://github.com/flymonkey1985/GeneratePaySlip.git
 ```
 
 ### Executing program
@@ -58,9 +58,11 @@ git clone
 * Assume the JDK 10 & gradle have been installed on the system already
 * Run the following command
 ```
+cd GeneratePaySlip
 ./gradlew build
 ./gradlew jar
 java -jar build/libs/GeneratePaySlip.jar
+GenerateMonthlyPayslip "ross mary" 60000
 ```
 
 ### Running all tests
