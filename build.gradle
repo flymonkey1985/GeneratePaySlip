@@ -1,0 +1,46 @@
+plugins {
+    id 'java'
+    id 'application'
+
+}
+
+group 'org.example'
+//version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+    compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.17.0'
+    compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.17.0'
+}
+
+jar {
+    manifest {
+        attributes "Main-Class": "com.company.Main"
+    }
+
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
+
+application {
+    mainClass = 'com.company.Main'
+}
+
+javadoc {
+    //include 'com/company/*'
+    source = sourceSets.main.allJava
+    classpath = configurations.compile
+    options.addBooleanOption('html5', true)
+}
+
+
+
+test {
+    useJUnitPlatform()
+}
