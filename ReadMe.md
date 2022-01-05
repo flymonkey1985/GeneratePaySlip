@@ -27,10 +27,16 @@ It can run on Windows, MacOS, Linux, Unix.
 
 #### Class
 Class Employee has attributes name, salary.
+Attribute name can be split into first, middle, last name if required
 Class PaySlip has attributes name, monthlyIncome, monthlyTax, monthlyNetIncome.
 Employee has payslip, and it can call print function of payslip to generate payslip details.
 Payslip encapsulates function printPaySlip which can be referenced by other classes as well to print payslip.
 The console application needs logs to record errors & debugging information.
+
+#### Validation
+The annual salary can't be negative amount.
+The name shouldn't have any digits.
+
 
 #### Performance Improvement
 If it takes too long to calculate tax and salary is same for some employees based on their level.
@@ -64,6 +70,8 @@ cd GeneratePaySlip
 java -jar build/libs/GeneratePaySlip.jar
 GenerateMonthlyPayslip "ross mary" 60000
 ```
+* Exit application
+Type * and enter
 
 ### Running all tests
 ```

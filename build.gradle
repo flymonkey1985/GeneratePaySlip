@@ -1,6 +1,5 @@
 plugins {
     id 'java'
-    id 'application'
 
 }
 
@@ -28,9 +27,7 @@ jar {
     }
 }
 
-application {
-    mainClass = 'com.company.Main'
-}
+
 
 javadoc {
     //include 'com/company/*'

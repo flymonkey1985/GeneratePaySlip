@@ -1,6 +1,7 @@
 package com.company.tools;
 
 
+import com.company.exception.TaxCalculatorException;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -42,7 +43,7 @@ public class TaxCalculatorTest {
     @Test
     @DisplayName("Test tax with annual salary less than 0")
     void testTaxForLessThanZero() {
-        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+        Exception exception = assertThrows(TaxCalculatorException.class, () -> {
             TaxCalculator.calculateMonthlyTax(-20);
         });
         String expectedMessage = "Invalid annual salary : -20";
