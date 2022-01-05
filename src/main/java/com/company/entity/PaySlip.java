@@ -1,6 +1,5 @@
 package com.company.entity;
 
-import com.company.exception.EmployeeException;
 import com.company.exception.PaySlipException;
 import com.company.tools.CurrencyUtil;
 

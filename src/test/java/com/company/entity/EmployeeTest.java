@@ -1,12 +1,12 @@
 package com.company.entity;
 
 import com.company.exception.EmployeeException;
-import com.company.tools.CurrencyUtil;
-import com.company.tools.TaxCalculator;
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class EmployeeTest {
     Employee employee;
