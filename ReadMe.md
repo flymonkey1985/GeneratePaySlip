@@ -27,14 +27,15 @@ It can run on Windows, MacOS, Linux, Unix.
 
 #### Class
 Class Employee has attributes name, salary.
-Attribute name can be split into first, middle, last name if required
+Attribute name can be split into first, middle, last name if required.
 Class PaySlip has attributes name, monthlyIncome, monthlyTax, monthlyNetIncome.
-Employee has payslip, and it can call print function of payslip to generate payslip details.
+Employee has payslip, and it can call print function of Payslip to generate payslip details.
 Payslip encapsulates function printPaySlip which can be referenced by other classes as well to print payslip.
-The console application needs logs to record errors & debugging information.
+The console application needs logs to record and debug errors.
 
 #### Validation
 The annual salary can't be negative amount.
+The monthly income, monthly tax, monthly net income can't be negative amount.
 The name shouldn't have any digits.
 
 
