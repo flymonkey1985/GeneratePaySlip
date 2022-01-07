@@ -28,4 +28,14 @@ public class Tax {
     public double getBaseTax(){
         return this.baseTax;
     }
+
+    @Override
+    public String toString() {
+        return "Tax{" +
+                "max = " + this.max +
+                ", min = " + this.min +
+                ", taxRate = " + this.taxRate +
+                ", baseTax = " + this.baseTax +
+                "}";
+    }
 }

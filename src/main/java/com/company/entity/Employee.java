@@ -12,13 +12,13 @@ import static com.company.constant.Constant.EMPLOYEE_HAS_INVALID_NAME;
 public class Employee {
     private String name;
     private double annualSalary;
-    private PaySlip paySlip;
+
 
     public Employee(String name, double annualSalary) {
         this.name = name;
         this.annualSalary = annualSalary;
         valid();
-        initPaySlip(this.name, this.annualSalary);
+
     }
 
     /**
@@ -35,22 +35,31 @@ public class Employee {
     }
 
 
-    private void initPaySlip(String name, double annualSalary){
+
+    /**
+     * The method is used to caculate payslip for employee
+     * @return Payslip
+     */
+    public PaySlip caculatePaySlip(){
         double monthlyIncome = CurrencyUtil.convertValueWithScale(annualSalary/12, 2);
         double monthlyTax = CurrencyUtil.convertValueWithScale(TaxCalculator.calculateMonthlyTax(annualSalary), 2);
 
-        this.paySlip = new PaySlip(name, monthlyIncome, monthlyTax);
+        return new PaySlip(name, monthlyIncome, monthlyTax);
     }
 
-    /**
-     * The method is used to generate pay slip for employee
-     */
-    public void generatePaySlip(){
-        this.paySlip.printPaySlip();
-    }
+
 
     public String getName(){
         return this.name;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "name = " + name +
+                ", annualSalary = " + annualSalary+
+                "}";
+
     }
 
 

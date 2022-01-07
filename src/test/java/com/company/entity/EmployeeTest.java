@@ -54,6 +54,18 @@ public class EmployeeTest {
 
     }
 
+    @Test
+    @DisplayName("Test caculate payslip")
+    void testCaculatePayslip() {
+        PaySlip paySlip = employee.caculatePaySlip();
+
+        assertEquals("Ross Mary", paySlip.getName());
+        assertEquals(5000, paySlip.getMonthlyIncome());
+        assertEquals(500, paySlip.getMonthlyTax());
+        assertEquals(4500, paySlip.getMonthlyNetIncome());
+
+    }
+
     @AfterEach
     void destroy() {
        employee = null;

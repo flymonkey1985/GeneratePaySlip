@@ -19,6 +19,22 @@ public class PaySlip {
         valid();
     }
 
+    public String getName(){
+        return this.name;
+    }
+
+    public double getMonthlyIncome(){
+        return this.monthlyIncome;
+    }
+
+    public double getMonthlyTax(){
+        return this.monthlyTax;
+    }
+
+    public double getMonthlyNetIncome(){
+        return this.monthlyNetIncome;
+    }
+
     /**
      * It is method to valid payslip parameters
      * @throws PaySlipException throws the exception if monthly income, monthly tax, monthly net income is negative
@@ -39,12 +55,22 @@ public class PaySlip {
      * The method is used to print payslip details
      */
 
-   void printPaySlip(){
+   public void printPaySlip(){
        System.out.println("Monthly Payslip for: "+this.name);
        System.out.println("Gross Monthly Income: "+ CurrencyUtil.displayValueAsCurrency(this.monthlyIncome));
        System.out.println("Monthly Income Tax: "+CurrencyUtil.displayValueAsCurrency(this.monthlyTax));
        System.out.println("Net Monthly Income: "+CurrencyUtil.displayValueAsCurrency(this.monthlyNetIncome));
    }
+
+    @Override
+    public String toString() {
+        return "PaySlip{" +
+                "name = " + this.name +
+                ", monthlyIncome = " + this.monthlyIncome +
+                ", monthlyTax = " + this.monthlyTax +
+                ", monthlyNetIncome = " + this.monthlyNetIncome +
+                "}";
+    }
 
 
 }

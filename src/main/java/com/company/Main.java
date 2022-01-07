@@ -2,6 +2,7 @@ package com.company;
 
 import com.company.constant.Constant;
 import com.company.entity.Employee;
+import com.company.entity.PaySlip;
 import com.company.exception.EmployeeException;
 import com.company.exception.PaySlipException;
 import org.apache.logging.log4j.LogManager;
@@ -54,7 +55,8 @@ public class Main {
                         double salary = Double.parseDouble(annualSalary);
 
                         Employee employee = new Employee(name, salary);
-                        employee.generatePaySlip();
+                        PaySlip paySlip = employee.caculatePaySlip();
+                        paySlip.printPaySlip();
 
                     }catch(EmployeeException ex){
                         logger.error(ex);
